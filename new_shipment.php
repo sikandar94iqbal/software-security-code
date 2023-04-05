@@ -1,5 +1,5 @@
 <?php
-include('includes/db_connection.php'); 
+include_once('includes/db_connection.php'); 
 
 // default time
 date_default_timezone_set("Asia/Kolkata");
@@ -144,7 +144,7 @@ VALUE ('$f_name','$l_name','$phone_number','$email','$order_weight','$dimension'
                 </button>
             </div>
 
-            <?php include('includes/sidebar.php') ?>
+            <?php include_once('includes/sidebar.php') ?>
 
             <div class="sidebar-background"></div>
         </div>
@@ -172,31 +172,31 @@ VALUE ('$f_name','$l_name','$phone_number','$email','$order_weight','$dimension'
     <div class="row g-3">
         <div class="col-lg-6">
             <div class="form-floating">
-                <input type="text" name="f_name" class="form-control" id="firstnamefloatingInput" placeholder="Enter your firstname">
+                <input type="text" name="f_name" class="form-control" id="firstnamefloatingInput" placeholder="Enter your firstname" required>
                 <label for="firstnamefloatingInput">First Name</label>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-floating">
-                <input type="text" name="l_name" class="form-control" id="lastnamefloatingInput" placeholder="Enter your Lastname">
+                <input type="text" name="l_name" class="form-control" id="lastnamefloatingInput" placeholder="Enter your Lastname" required>
                 <label for="lastnamefloatingInput">Last Name</label>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-floating">
-                <input type="number" name="phone_number" class="form-control" id="lastnamefloatingInput" placeholder="Enter your Lastname">
+                <input type="number" name="phone_number" class="form-control" id="lastnamefloatingInput" placeholder="Enter your Lastname" required>
                 <label for="lastnamefloatingInput">Phone_number</label>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-floating">
-                <input type="email" name="email_address" class="form-control" id="emailfloatingInput" placeholder="Enter your email">
+                <input type="email" name="email_address" class="form-control" id="emailfloatingInput" placeholder="Enter your email" required>
                 <label for="emailfloatingInput">Email Address</label>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-floating">
-                <select class="form-select" name="order_weight" id="floatingSelect" aria-label="Floating label select example">
+                <select class="form-select" name="order_weight" id="floatingSelect" aria-label="Floating label select example" required>
                     <option selected>Less than 1 Kg</option>
                     <option value="1-2 Kg">1-2 Kg</option>
                     <option value="2-5 Kg">2-5 Kg</option>
@@ -215,13 +215,13 @@ VALUE ('$f_name','$l_name','$phone_number','$email','$order_weight','$dimension'
         </div>
         <div class="col-lg-4">
             <div class="form-floating">
-                <input type="text" name="p_zipcode" class="form-control" id="cityfloatingInput" placeholder="Enter your city">
+                <input type="text" name="p_zipcode" class="form-control" id="cityfloatingInput" placeholder="Enter your city" required>
                 <label for="cityfloatingInput">Pickup Zipcode</label>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-floating">
-                <input type="number" name="d_zipcode" class="form-control" id="zipfloatingInput" placeholder="Enter your zipcode">
+                <input type="number" name="d_zipcode" class="form-control" id="zipfloatingInput" placeholder="Enter your zipcode" required>
                 <label for="zipfloatingInput">Drop Zipcode</label>
             </div>
         </div>

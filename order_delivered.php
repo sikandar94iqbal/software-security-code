@@ -1,5 +1,5 @@
-<?php include('includes/db_connection.php'); ?>
-<?php include('includes/header.php'); ?>
+<?php include_once('includes/db_connection.php'); ?>
+<?php include_once('includes/header.php'); ?>
 
         <!-- ========== App Menu ========== -->
         <div class="app-menu navbar-menu">
@@ -11,7 +11,7 @@
                     <i class="ri-record-circle-line"></i>
                 </button>
             </div>
-<?php include('includes/sidebar.php'); ?>
+<?php include_once('includes/sidebar.php'); ?>
 
             <div class="sidebar-background"></div>
         </div>
@@ -46,18 +46,9 @@
                                                 <div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm">
-                                                <div class="d-flex justify-content-sm-end">
-                                                    <div class="search-box ms-2">
-                                                        <input type="text" class="form-control search" placeholder="Search...">
-                                                        <i class="ri-search-line search-icon"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        
                                         <div class="table-responsive table-card mt-3 mb-1">
-                                            <table class="table align-middle table-nowrap" id="customerTable">
+                                            <table class="table align-middle table-nowrap" id="customerTable" aria-describedby="customerTableDesc">
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th class="sort" data-sort="customer_name">Full Name</th>
@@ -68,12 +59,12 @@
                                                         <th class="sort" data-sort="action">Weight</th>
                                                         <th class="sort" data-sort="action">Dimension</th>
                                                         <th class="sort" data-sort="action">Date_time</th>
-                                                        <th class="sort" data-sort="action">Update Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="list form-check-all">
                                                 <?php
-                                                        $orders=mysqli_query($con,"SELECT * FROM timeline WHERE status='Delivered' ORDER BY date_time_stamp DESC");
+                                                        $orders=mysqli_query($con,"SELECT project.f_name, project.l_name, project.pickup_zipcode, project.drop_zipcode, project.awb, project.phone_number, project.order_weight, project.dimension, 
+                                                        timeline.date_time_stamp FROM project INNER JOIN timeline WHERE status='Delivered' ORDER BY date_time_stamp DESC");
                                                         while ($rows=mysqli_fetch_array($orders)) { 
                                                         ?>
                                                     <tr>
@@ -85,13 +76,6 @@
                                                         <td class="phone"><?= $rows['order_weight'];?></td>
                                                         <td class="date"><?= $rows['dimension'];?></td>
                                                         <td class="phone"><?= $rows['date_time_stamp'];?></td>
-                                                        <td>
-                                                            <div class="d-flex gap-2">
-                                                                <div class="edit">
-                                                                    <a href="update_status.php?awb=<?=$rows['awb']; ?>"><button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button></a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
                                                        
                                                     </tr>
                                                    <?php } ?>

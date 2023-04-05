@@ -1,3 +1,9 @@
+<?php
+  if(isset($_POST['submit'])){
+$awb=$_POST['awb'];
+header('location: timeline.php?awb='.$awb);
+}
+?>
 
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
@@ -30,7 +36,6 @@
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 </head>
-
 <body>
 
 
@@ -71,13 +76,14 @@
                 </button>
 
                 <!-- App Search-->
-                <form class="app-search d-none d-md-block" action="timeline.php" method="post">
+                <form class="app-search d-none d-md-block" action="#" method="post">
                     <div class="position-relative">
-                        <input type="text" class="form-control" placeholder="AWB Search..." autocomplete="off" id="search-options" value="">
+                        <input type="text" name="awb" class="form-control" placeholder="AWB Search..." autocomplete="off" id="search-options" value="">
                         <span class="mdi mdi-magnify search-widget-icon"></span>
                         <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                        <input type="submit" name="submit" style="display:none;">
                     </div>
-                </form>
+                </form>
             </div>
 
             <div class="d-flex align-items-center">

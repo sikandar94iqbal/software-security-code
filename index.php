@@ -1,5 +1,5 @@
-<?php include('includes/db_connection.php'); ?>
-<?php include('includes/header.php'); ?>
+<?php include_once('includes/db_connection.php'); ?>
+<?php include_once('includes/header.php'); ?>
         <!-- ========== App Menu ========== -->
         <div class="app-menu navbar-menu">
             <!-- LOGO -->
@@ -11,7 +11,7 @@
                 </button>
             </div>
 
-            <?php include('includes/sidebar.php'); ?>
+            <?php include_once('includes/sidebar.php'); ?>
 
             <div class="sidebar-background"></div>
         </div>
@@ -49,7 +49,7 @@
                                                         $result1=mysqli_fetch_array($orders);
                                                         ?>
                                                         <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?= $result1['COUNT(id)'];?>">0</span></h4>
-                                                        <a href="order_dispatched.php" class="text-decoration-underline">View </a>
+                                                        <a href="order_dispatched.php" class="text-decoration-underline">View Details</a>
                                                     </div>
                                                     <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-success rounded fs-3">
@@ -67,67 +67,17 @@
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center">
                                                     <div class="flex-grow-1 overflow-hidden">
-                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Total Orders</p>
-                                                    </div>
-                                                    <div class="flex-shrink-0">
-
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                                    <div>
-                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?= $result1['COUNT(id)'];?>">0</span></h4>
-                                                        <a href="new_shipment.php" class="text-decoration-underline">View Total orders</a>
-                                                    </div>
-                                                    <div class="avatar-sm flex-shrink-0">
-                                                        <span class="avatar-title bg-soft-info rounded fs-3">
-                                                            <i class="bx bx-shopping-bag text-info"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- end card body -->
-                                        </div><!-- end card -->
-                                    </div><!-- end col -->
-
-                                    <div class="col-xl-3 col-md-6">
-                                        <!-- card -->
-                                        <div class="card card-animate">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-grow-1 overflow-hidden">
-                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Customers</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                                    <div>
-                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?= $result1['COUNT(id)'];?>">0</span></h4>
-                                                        <a href="order_dispatched.php" class="text-decoration-underline">See details</a>
-                                                    </div>
-                                                    <div class="avatar-sm flex-shrink-0">
-                                                        <span class="avatar-title bg-soft-warning rounded fs-3">
-                                                            <i class="bx bx-user-circle text-warning"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- end card body -->
-                                        </div><!-- end card -->
-                                    </div><!-- end col -->
-
-                                    <div class="col-xl-3 col-md-6">
-                                        <!-- card -->
-                                        <div class="card card-animate">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-grow-1 overflow-hidden">
-                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Shipment Delivered</p>
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Shipments Delivered</p>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-end justify-content-between mt-4">
                                                     <div>
                                                     <?php
-                                                        $orders=mysqli_query($con,"SELECT COUNT(id) FROM timeline WHERE status='delivered'");
+                                                        $orders=mysqli_query($con,"SELECT COUNT(id) FROM timeline WHERE status='Delivered'");
                                                         $result2=mysqli_fetch_array($orders);
+                                                        $count = $result2[0];
                                                         ?>
-                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?= $result2['count(id)']; ?>">0</span></h4>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?= ($count > 0) ? $count : 0; ?>">0</span></h4>
                                                         <a href="order_delivered.php" class="text-decoration-underline"> View Details</a>
                                                     </div>
                                                     <div class="avatar-sm flex-shrink-0">

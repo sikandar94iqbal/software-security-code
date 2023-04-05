@@ -1,5 +1,5 @@
-<?php include('includes/db_connection.php'); ?>
-<?php include('includes/header.php'); ?>
+<?php include_once('includes/db_connection.php'); ?>
+<?php include_once('includes/header.php'); ?>
 
         <!-- ========== App Menu ========== -->
         <div class="app-menu navbar-menu">
@@ -11,7 +11,7 @@
                     <i class="ri-record-circle-line"></i>
                 </button>
             </div>
-<?php include('includes/sidebar.php'); ?>
+<?php include_once('includes/sidebar.php'); ?>
 
             <div class="sidebar-background"></div>
         </div>
@@ -44,23 +44,10 @@
                                     <div class="listjs-table" id="customerList">
                                         <div class="row g-4 mb-3">
                                             <div class="col-sm-auto">
-                                                <div>
-                                                    <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Add</button>
-                                                    <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
-                                                </div>
                                             </div>
-                                            <div class="col-sm">
-                                                <div class="d-flex justify-content-sm-end">
-                                                    <div class="search-box ms-2">
-                                                        <input type="text" class="form-control search" placeholder="Search...">
-                                                        <i class="ri-search-line search-icon"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <div class="table-responsive table-card mt-3 mb-1">
-                                            <table class="table align-middle table-nowrap" id="customerTable">
+                                            <table class="table align-middle table-nowrap" id="customerTable" aria-describedby="customerTableDesc">
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th class="sort" data-sort="customer_name">Full Name</th>

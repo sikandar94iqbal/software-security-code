@@ -1,6 +1,6 @@
-<?php include('includes/db_connection.php');
+<?php include_once('includes/db_connection.php');
 $awb=$_GET['awb'];
- include('includes/header.php'); ?>
+ include_once('includes/header.php'); ?>
 
         <!-- ========== App Menu ========== -->
         <div class="app-menu navbar-menu">
@@ -13,7 +13,7 @@ $awb=$_GET['awb'];
                 </button>
             </div>
 
-            <?php include('includes/sidebar.php'); ?>
+            <?php include_once('includes/sidebar.php'); ?>
 
             <div class="sidebar-background"></div>
         </div>

@@ -23,7 +23,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="order_dispatched.php">
-                            <i class=" ri-luggage-cart-line"></i> <span data-key="t-widgets">Order dispatched</span>
+                            <i class=" ri-luggage-cart-line"></i> <span data-key="t-widgets">Order Dispatched</span>
                             </a>
                         </li>
                         <li class="nav-item">

@@ -1,4 +1,4 @@
-<?php include('includes/db_connection.php');
+<?php include_once('includes/db_connection.php');
 $awb=$_GET['awb'];
 // default time
 date_default_timezone_set("Asia/Kolkata");
@@ -18,7 +18,7 @@ VALUE ('$awb','$status','$now')");
     header('location: timeline.php?awb='.$awb);
 }
 
-include('includes/header.php'); ?>
+include_once('includes/header.php'); ?>
 
 
         <!-- ========== App Menu ========== -->
@@ -32,7 +32,7 @@ include('includes/header.php'); ?>
                 </button>
             </div>
 
-            <?php include('includes/sidebar.php'); ?>
+            <?php include_once('includes/sidebar.php'); ?>
 
             <div class="sidebar-background"></div>
         </div>
@@ -68,7 +68,8 @@ include('includes/header.php'); ?>
                                                 <div>
                                                     <div class="mb-3">
                                                         <label for="formFile" class="form-label">AWB Number</label>
-                                                        <input class="form-control" type="text" value="<?= $awb;?>" />
+                                                        <input class="form-control" type="text" value="<?= $awb;?>" required/>
+
                                                     </div>
                                                     <div>
                                                         <label class="form-label" for="des-info-description-input">Description</label>

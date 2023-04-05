@@ -1326,7 +1326,7 @@ Prism.languages.markup = {
 							alias: 'attr-equals'
 						},
 						{
-							pattern: /^(\s*)["']|["']$/,
+							pattern: /^(\s*)["']|["'](\s*)$/,
 							lookbehind: true
 						}
 					]
@@ -1706,7 +1706,7 @@ Prism.languages.insertBefore('javascript', 'string', {
 				lookbehind: true,
 				inside: {
 					'interpolation-punctuation': {
-						pattern: /^\$\{|\}$/,
+						pattern: /^(?:\$\{|\})$/,
 						alias: 'punctuation'
 					},
 					rest: Prism.languages.javascript
