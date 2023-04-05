@@ -29,7 +29,7 @@ COPY . /var/www/html/
 # Set the working directory to the document root
 WORKDIR /var/www/html
 
-# Expose port 80 for HTTP trafficccc
+# Expose port 80 for HTTP trafficcccc
 EXPOSE 80
 
 # Start Apache in the foreground when the container is run
